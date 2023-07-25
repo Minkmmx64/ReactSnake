@@ -1,0 +1,119 @@
+@font-face {
+  font-family: equilibrium;
+  src: url(/public/equilibrium.woff2);
+}
+
+body {
+  margin: 0;
+  font-family: equilibrium, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #9bba5a;
+  color: rgba(0, 0, 0, 0.75);
+  width: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes AninSnakeCellElement {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.SnakeCellElement {
+  background-size: 100% 100%;
+  background-image: url(/public/food.svg);
+  opacity: .75;
+  animation: AninSnakeCellElement 2s linear infinite;
+}
+
+.PlayGameBotton {
+  display: inline-block;
+  font-size: 46px;
+  padding: 30px 14px 15px 18px;
+  line-height: 1;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+
+.PlayGameBotton:hover {
+  background-color: rgb(43, 51, 25);
+  color: rgb(170, 204, 102);
+}
+
+.ChooseBody {
+  background-color: rgba(39,47,23, 1);
+  border-radius: 8px;
+}
+
+.SnakeBottomStatus {
+  margin: 0px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 34px;
+  line-height: 64px;
+  height: 55px;
+  padding: 0px 8px;
+}
+
+.SnakeBottomStatus:hover {
+  background-color: rgb(43, 51, 25);
+  color: rgb(170, 204, 102);
+}
+
+@keyframes AninSnakeFood {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes AninSnakeFood2 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.SnakeFood {
+  animation: AninSnakeFood2 500ms linear 1;
+}
+
+.SnakeFood > div{
+  background-size: 100% 100%;
+  background-image: url(/public/food.svg);
+  opacity: .75;
+  animation: AninSnakeFood 1s linear infinite;
+}
+
+.opt{
+  opacity: 0.3;
+}
+
+.GoHere{
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  background-color: #1890ff;
+  width: 60px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0px 5px;
+  transition: 500ms all ease;
+  cursor: pointer;
+  color: rgb(242, 251, 254);
+  text-transform: uppercase;
+}
